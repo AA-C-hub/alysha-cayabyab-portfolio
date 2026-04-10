@@ -1615,6 +1615,11 @@ main ul {
   padding-top: 30px;
 }
 
+.border-img {
+  border: 3px solid #849E16;
+  padding: 1em;
+}
+
 .center-title h1 {
   margin-top: 2em;
   margin: 0;
