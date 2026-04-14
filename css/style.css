@@ -85,7 +85,7 @@ hr {
 }
 
 .lime {
-  color: #849E16;
+  color: #789109;
 }
 
 .paragraph-section a {
@@ -860,7 +860,7 @@ header a:hover::after {
 .marquee-track-main {
   display: flex;
   width: max-content;
-  animation: marquee 90s linear infinite;
+  animation: marquee 70s linear infinite;
 }
 
 .marquee-track span {
@@ -1022,7 +1022,7 @@ header a:hover::after {
 }
 
 .name {
-  font-size: 38px;
+  font-size: 43px;
   font-weight: bold;
 }
 
@@ -1178,7 +1178,7 @@ header a:hover::after {
   font-family: "articulat-heavy-cf", sans-serif;
   font-weight: 900;
   font-style: normal;
-  font-size: 3em;
+  /* font-size: 3em; */
   display: inline-block;
   animation: floaty 3s ease-in-out infinite;
 }
