@@ -561,29 +561,31 @@ header a:hover::after {
 }
 
 .prev h1 {
+  margin-top: 0.23em;
   text-align: left;
 }
 
 .next h1 {
+  margin-top: 0.23em;
   text-align: right;
 }
 
-.bottom-bar a {
+.prev a {
   color: black;
   text-decoration: none;
   position: relative;
   display: inline-block;
 }
 
-.bottom-bar a:hover {
+.prev a:hover {
   color: #849E16;
 }
 
-.bottom-bar a::after {
+.prev a::after {
   content: "";
   position: absolute;
   left: 0;
-  bottom: 4px;
+  bottom: 10px;
   /* adjust distance from text */
   width: 0%;
   height: 2px;
@@ -592,10 +594,50 @@ header a:hover::after {
 }
 
 /* animate underline */
-.bottom-bar a:hover::after {
+.prev a:hover::after {
   width: 100%;
 }
 
+.next a {
+  color: black;
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+}
+
+.next a:hover {
+  color: #849E16;
+}
+
+.next a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 10px;
+  /* adjust distance from text */
+  width: 0%;
+  height: 2px;
+  background-color: #ff7aa2;
+  transition: width 0.3s ease;
+}
+
+/* animate underline */
+.next a:hover::after {
+  width: 100%;
+}
+
+.view-all-projects a {
+  font-family: var(--body-font);
+  font-weight: 700;
+  text-decoration: none;
+  color: #222;
+  position: relative;
+  display: inline-block;
+}
+
+.view-all-projects a:hover {
+  color: #F35900;
+}
 
 /* FOLDER-STYLE TABS */
 .selected-works-header {
@@ -1158,7 +1200,7 @@ header a:hover::after {
 
 /* FOOTER */
 .site-footer {
-  margin-top: 80px;
+  margin-top: 55px;
   padding: 40px 20px;
   border-top: 2px solid #000;
   background-color: #E0FB6F;
@@ -1627,7 +1669,7 @@ main ul {
 }
 
 .paragraph-section {
-  margin-top: 150px;
+  margin-top: 90px;
 }
 
 .paragraph-section h1 {
@@ -1925,6 +1967,14 @@ main ul {
   max-width: 400px;
   aspect-ratio: 1 / 1;
   overflow: hidden;
+  margin-left: 43px;
+}
+
+@media (max-width: 768px) {
+  .frame-animation-bears {
+    margin-left: 0;
+    margin-bottom: 20px;
+  }
 }
 
 /* stack images */
@@ -2004,9 +2054,4 @@ main ul {
     align-items: flex-start;
   }
 
-}
-
-/* GALLERY IMG SECTIONS */
-.in-studio-section {
-  margin-bottom: 160px;
 }
