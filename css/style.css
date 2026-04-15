@@ -543,6 +543,58 @@ header a:hover::after {
   transform: scale(1.1);
 }
 
+/* PROJECTS BOTTOM BAR */
+.bottom-bar-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.bottom-bar {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  border-top: 2px solid #849E16;
+  border-bottom: 2px solid #849E16;
+}
+
+.prev h1 {
+  text-align: left;
+}
+
+.next h1 {
+  text-align: right;
+}
+
+.bottom-bar a {
+  color: black;
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+}
+
+.bottom-bar a:hover {
+  color: #849E16;
+}
+
+.bottom-bar a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 4px;
+  /* adjust distance from text */
+  width: 0%;
+  height: 2px;
+  background-color: #ff7aa2;
+  transition: width 0.3s ease;
+}
+
+/* animate underline */
+.bottom-bar a:hover::after {
+  width: 100%;
+}
 
 
 /* FOLDER-STYLE TABS */
@@ -556,6 +608,7 @@ header a:hover::after {
   font-size: clamp(2rem, 5vw, 3em);
   border-bottom: #F35900 2px solid;
   padding-bottom: 0.3em;
+  text-align: center;
 }
 
 .selected-works-container {
