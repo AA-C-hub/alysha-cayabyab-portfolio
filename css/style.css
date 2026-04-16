@@ -2055,3 +2055,13 @@ main ul {
   }
 
 }
+
+/* FIGCAPTIONS */
+
+.image-block figcaption {
+  font-size: 0.85rem;
+  color: #232222;
+  margin-top: 10px;
+  letter-spacing: 0.05em;
+  font-family: var(--body-font);
+}
