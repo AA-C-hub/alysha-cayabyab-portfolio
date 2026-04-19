@@ -62,7 +62,8 @@
                                             <h1>Alysha Angel <br> Cayabyab</h1>
                                         </div>
                                         <div>
-                                            <p>The ultimate <strong class="lime">lime green</strong> enthusiast.
+                                            <p>The ultimate <strong class="lime typing" id="limeText">lime
+                                                    green</strong> enthusiast.
                                                 <br>One thing about me is that I
                                                 am a <strong>human being</strong> passionate about giving meaning to my
                                                 work and creating
@@ -137,7 +138,7 @@
                                         <h1>Barakoko</h1>
                                         <div class="row">
                                             <div class="one-half column">
-                                                <img src="img/booyah-pics/booyah-boxes-duo-faces.webp" width="380"
+                                                <img src="img/barakoko-pics/barakokko-selected-works.jpg" width="380"
                                                     height="300">
                                             </div>
                                             <div class="one-half column">
@@ -184,41 +185,29 @@
                                 <div>
                                     <h1 class="footer-head">You scrolled all the way 👀</h1>
                                     <div class="footer-p">
-                                        <p> Something peeked your interest? <a class="footer-button-cap" href="#">Send
-                                                me an e-mail! </a></p>
+                                        <p>★ Something peeked your interest? <a class="footer-button-cap" href="#">Send
+                                                me an e-mail! </a> ★</p>
                                     </div>
+
                                     <hr>
-                                    <p>© 2026 Alysha Angel Cayabyab. Made with HTML/CSS/JS.</p>
-                                    <nav class="site-nav">
-                                        <ul>
-                                            <li><a href="projects/index.html">Projects</a></li>
-                                            <li><a href="about/index.html">About</a></li>
-                                        </ul>
-                                    </nav>
-                                </div>
 
-
-                                <!-- <div class="footer-left">
                                     <div>
-                                        <h1 class="footer-head">You scrolled all the way 👀</h1>
-                                        <p>Something peeked your interest? <a class="footer-button-cap" href="#">Send
-                                                me an e-mail!</a></p>
-                                        <hr>
-                                    </div>
-                                    <div class="footer-info">
-                                        <h1><a href="#header">★ AHSYLA CREATIVE DESIGN ★</a></h1>
-                                        <p>© 2026 Alysha Angel Cayabyab. Made with HTML/CSS/JS.</p>
-                                    </div>
-                                </div> -->
 
-                                <!-- <div class="footer-right">
-                                    <nav class="footer-nav">
-                                        <ul>
-                                            <li><a class="footer-button" href="projects/index.html">Projects</a></li>
-                                            <li><a class="footer-button" href="#top">Back to the top ⬆</a></li>
-                                        </ul>
-                                    </nav>
-                                </div> -->
+                                        <div class="footer-info">
+                                            <div>
+                                                <p>© 2026 Alysha Angel Cayabyab. Made with HTML/CSS/JS.</p>
+                                            </div>
+
+                                            <nav class="footer-nav">
+                                                <ul>
+                                                    <li><a href="projects/index.html">Projects</a></li>
+                                                    <li><a href="about/index.html">About</a></li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+
+                                    </div>
+                                </div>
                             </div>
                         </footer>
 
@@ -237,6 +226,23 @@
 
         <!--MAIN JS-->
         <script src="js/script.js"></script>
+
+        <!-- TYPE -->
+        <script>
+            const limeText = document.getElementById("limeText");
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        limeText.classList.add("animate");
+                    }
+                });
+            }, {
+                threshold: 0.5 // triggers when 50% visible
+            });
+
+            observer.observe(limeText);
+        </script>
 
     </body>
 
