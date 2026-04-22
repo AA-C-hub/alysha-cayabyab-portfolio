@@ -84,42 +84,6 @@ hr {
   margin-bottom: 2em;
 }
 
-.lime {
-  color: #789109;
-}
-
-.typing {
-  display: inline-block;
-  overflow: hidden;
-  white-space: nowrap;
-  vertical-align: bottom;
-
-  border-right: 2px solid rgb(26, 26, 26);
-
-  width: 0;
-}
-
-/* only runs when activated */
-.typing.animate {
-  animation: typing 1.5s steps(10, end) forwards,
-    blink 0.7s step-end infinite;
-}
-
-@keyframes typing {
-  from {
-    width: 0
-  }
-
-  to {
-    width: 7.57ch;
-  }
-}
-
-@keyframes blink {
-  50% {
-    border-color: transparent;
-  }
-}
 
 .paragraph-section a {
   color: #F35900;
@@ -1139,9 +1103,74 @@ header h1 a.active {
   margin-bottom: 0.5em;
 }
 
+.about-resume span {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  border: 2px solid transparent;
+}
+
 .about-resume p {
   max-width: 400px;
   width: 100%;
+}
+
+.lime {
+  color: #789109;
+  font-weight: 700;
+}
+
+.about-resume .typing {
+  overflow: clip;
+  white-space: nowrap;
+
+  width: 0;
+  display: inline-block;
+  position: relative;
+  /* needed for ::after positioning */
+}
+
+.about-resume .typing::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  /* sits just after the text */
+  bottom: 0;
+  /* aligns to baseline */
+  width: 2px;
+  height: 2em;
+  /* matches text height */
+  background: rgb(26, 26, 26);
+
+  opacity: 0;
+  /* hidden until animation starts */
+}
+
+
+/* only runs when activated */
+.typing.animate {
+  animation: typing 1.5s steps(10, end) 2s forwards;
+}
+
+.typing.animate::after {
+  opacity: 1;
+  animation: blink 0.7s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0
+  }
+
+  to {
+    width: 7.57ch;
+  }
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
 }
 
 .about-resume h1 {
@@ -1778,6 +1807,27 @@ main ul {
 .paragraph-section {
   margin-top: 90px;
 }
+
+.paragraph-centered {
+  display: grid;
+  place-items: center;
+  margin: 4em auto;
+  max-width: 550px;
+  padding-top: 3em;
+}
+
+.paragraph-centered h1 {
+  margin: 0;
+  padding: 0;
+  line-height: 1.1em;
+  font-size: 4em;
+}
+
+.paragraph-centered p {
+  font-size: 1.2em;
+  margin-top: 1em;
+}
+
 
 .paragraph-section h1 {
   margin: 0;
