@@ -1115,61 +1115,42 @@ header h1 a.active {
   width: 100%;
 }
 
-.lime {
-  color: #789109;
-  font-weight: 700;
+.hero-typewriter {
+  margin-top: 2em;
 }
 
-.about-resume .typing {
-  overflow: clip;
+.hero-typewriter p {
+  font-size: 1.3em;
+  font-weight: 500;
+}
+
+.typewriter {
+  display: inline-block;
+  vertical-align: baseline;
+  --cursor-color: black;
+  --cursor-thickness: .1em;
+  font-family: 'articulat-cf', sans-serif;
+  font-weight: 300;
+  color: #F35900;
+  /* overflow: clip; */
   white-space: nowrap;
 
-  width: 0;
-  display: inline-block;
-  position: relative;
-  /* needed for ::after positioning */
+  /* keep your cursor */
+  box-shadow: var(--cursor-thickness) 0 0 0 var(--cursor-color, black);
+
+  animation: typewriter-blinking 1s step-end infinite;
 }
 
-.about-resume .typing::after {
-  content: "";
-  position: absolute;
-  right: 0;
-  /* sits just after the text */
-  bottom: 0;
-  /* aligns to baseline */
-  width: 2px;
-  height: 2em;
-  /* matches text height */
-  background: rgb(26, 26, 26);
+/* cursor blink stays */
+@keyframes typewriter-blinking {
 
-  opacity: 0;
-  /* hidden until animation starts */
-}
-
-
-/* only runs when activated */
-.typing.animate {
-  animation: typing 1.5s steps(10, end) 2s forwards;
-}
-
-.typing.animate::after {
-  opacity: 1;
-  animation: blink 0.7s step-end infinite;
-}
-
-@keyframes typing {
-  from {
-    width: 0
+  0%,
+  100% {
+    box-shadow: transparent;
   }
 
-  to {
-    width: 7.57ch;
-  }
-}
-
-@keyframes blink {
   50% {
-    opacity: 0;
+    box-shadow: var(--cursor-color, black);
   }
 }
 
@@ -1873,7 +1854,8 @@ main ul {
 }
 
 .portfolio-entry h1 {
-  border-bottom: #0a0a0a 2px solid;
+  border-bottom: #ff0c55 3px dashed;
+  padding-bottom: 5px;
   width: fit-content;
 }
 

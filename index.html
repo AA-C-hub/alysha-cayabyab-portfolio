@@ -61,13 +61,15 @@
                                         <div class="resume-name">
                                             <h1>Alysha Angel <br> Cayabyab</h1>
                                         </div>
-                                        <div>
-                                            <p><span>The ultimate</span><span class="lime typing" id="limeText">lime
-                                                    green</span><span>enthusiast.</span>
-                                                <span>One thing about me is that I
-                                                    am a <strong>human being</strong> passionate about giving meaning to
-                                                    my work and creating designs that evoke a sense of belonging.</span>
+                                        <div class="hero-typewriter">
+                                            <p><span>The ultimate</span><span class="typewriter" id="typewriter"></span>
+                                                <span>enthusiast.</span>
                                             </p>
+                                        </div>
+                                        <div>
+                                            <p>One thing about me is that I
+                                                am a <strong>human being</strong> passionate about giving meaning to
+                                                my work and creating designs that evoke a sense of belonging.</p>
                                         </div>
                                     </div>
                                     <a href="#works-projects" class="button">explore my selected works</a>
@@ -229,19 +231,47 @@
 
         <!-- TYPE -->
         <script>
-            const limeText = document.getElementById("limeText");
+            const words = ["branding", "sans serif", "book cover", "unconventionality"];
 
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        limeText.classList.add("animate");
+            let wordIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+
+            const el = document.getElementById("typewriter");
+
+            const typingSpeed = 80;
+            const deletingSpeed = 50;
+            const pauseTime = 1200;
+
+            function type() {
+                const currentWord = words[wordIndex];
+
+                // render text
+                el.textContent = currentWord.slice(0, charIndex);
+
+                if (!isDeleting) {
+                    if (charIndex < currentWord.length) {
+                        charIndex++;
+                    } else {
+                        isDeleting = true;
+                        setTimeout(type, pauseTime);
+                        return;
                     }
-                });
-            }, {
-                threshold: 0.5 // triggers when 50% visible
-            });
+                } else {
+                    if (charIndex > 0) {
+                        charIndex--;
+                    } else {
+                        isDeleting = false;
+                        wordIndex = (wordIndex + 1) % words.length;
+                        setTimeout(type, 300);
+                        return;
+                    }
+                }
 
-            observer.observe(limeText);
+                setTimeout(type, isDeleting ? deletingSpeed : typingSpeed);
+            }
+
+            type();
         </script>
 
     </body>
