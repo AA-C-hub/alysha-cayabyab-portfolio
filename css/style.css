@@ -134,6 +134,55 @@ hr {
   color: #855322;
 }
 
+.client-list ul {
+  margin-top: 0;
+}
+
+.project-details ul {
+  margin-bottom: 0;
+}
+
+@media (max-width: 600px) {
+  .row {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .one-third.column.project-details {
+    width: 100%;
+    margin-bottom: 0;
+  }
+
+  .one-third.column.project-details.pt {
+    translate: 0 -50px;
+  }
+
+  .one-third.column.project-details.st {
+    translate: 0 -100px;
+  }
+
+}
+
+@media (max-width: 768px) {
+  .row {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .one-third.column.project-details {
+    width: 100%;
+    margin-bottom: 0;
+  }
+
+  .one-third.column.project-details.pt {
+    translate: 0 -50px;
+  }
+
+  .one-third.column.project-details.st {
+    translate: 0 -100px;
+  }
+
+}
 
 /* HELPERS */
 .space-out {
@@ -1706,6 +1755,18 @@ main ul {
   margin-bottom: 0;
   font-size: 1.75em;
   transform: translate(10px, 25px);
+}
+
+@media (max-width: 768px) {
+  .project-hero h1 {
+    font-size: clamp(4.5rem, 6vw, 6em);
+    line-height: 1.1;
+  }
+
+  .project-hero p {
+    font-size: clamp(1.5rem, 4vw, 1.75em);
+    text-align: center;
+  }
 }
 
 .project-hero img {
