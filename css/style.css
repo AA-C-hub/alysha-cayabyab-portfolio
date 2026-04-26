@@ -1195,7 +1195,7 @@ header h1 a.active {
 
   0%,
   100% {
-    box-shadow: transparent;
+    /* box-shadow: transparent; */
   }
 
   50% {
