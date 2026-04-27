@@ -406,10 +406,9 @@ header h1 a::after {
   position: absolute;
   left: 0;
   bottom: -4px;
-  /* adjust distance from text */
   width: 0%;
   height: 2px;
-  background-color: #ff7aa2;
+  background-color: #dc0344;
   transition: width 0.3s ease;
 }
 
@@ -423,19 +422,17 @@ header a {
   text-decoration: none;
   position: relative;
   display: inline-block;
-  /* key for proper underline width */
 }
 
-/* underline (hidden by default) */
+/* underline */
 header a::after {
   content: "";
   position: absolute;
   left: 0;
   bottom: 5px;
-  /* adjust distance from text */
   width: 0%;
   height: 2px;
-  background-color: #ff7aa2;
+  background-color: #dc0344;
   transition: width 0.3s ease;
 }
 
@@ -483,17 +480,17 @@ header a:hover::after {
 
 
 .site-nav a.active {
-  color: #ff3773;
+  color: #dc0344;
   font-weight: 600;
 }
 
 header h1 a:hover {
-  color: #ff3773;
+  color: #dc0344;
   /* hover state */
 }
 
 header h1 a.active {
-  color: #ff3773;
+  color: #dc0344;
   font-weight: 600;
 }
 
@@ -705,6 +702,64 @@ header h1 a.active {
   color: #F35900;
 }
 
+@media (max-width: 768px) {
+  .bottom-bar {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1.5rem 1rem;
+    text-align: center;
+  }
+
+  /* Make prev/next look like buttons */
+  .prev a,
+  .next a {
+    display: block;
+    padding: 0.75rem 1rem;
+    background-color: #849E16;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-align: center;
+    margin-left: 3em;
+    margin-right: 3em;
+    color: white;
+  }
+
+  .prev a:hover,
+  .next a:hover {
+    background-color: #F35900;
+    color: white;
+  }
+
+  /* Add arrows for clarity */
+  /* .prev a::before {
+    content: "← ";
+  } */
+
+  .next a::after {
+    content: " →";
+  }
+
+  /* View all = less emphasis */
+  .view-all-projects a {
+    font-size: 0.9rem;
+    text-decoration: none;
+  }
+
+  /* Remove underline animation (feels too desktop-y) */
+  .prev a::after,
+  .next a::after {
+    display: none;
+  }
+
+  /* Reset text alignment */
+  .prev h1,
+  .next h1,
+  .view-all-projects h2 {
+    text-align: center;
+  }
+}
+
 /* FOLDER-STYLE TABS */
 .selected-works-header {
   max-width: 1000px;
@@ -751,11 +806,12 @@ header h1 a.active {
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  padding-top: 8px;
-  font-family: "mono45-headline", monospace;
+  padding-top: 5px;
+  font-family: 'ff-din-paneuropean-cond', sans-serif;
+  text-transform: uppercase;
   font-size: 16px;
   font-weight: bold;
-  color: #222;
+  color: white;
   transition: transform 0.2s ease;
   user-select: none;
 }
@@ -785,6 +841,16 @@ header h1 a.active {
   /* background: #fffaec; */
   padding: 2em;
   border-radius: 20px;
+}
+
+.project-content .row {
+  gap: 5em;
+}
+
+@media (max-width: 768px) {
+  .project-content .row {
+    gap: 1em;
+  }
 }
 
 .project-content.active {
@@ -880,8 +946,8 @@ header h1 a.active {
 /* BUTTON */
 .button {
   display: inline-block;
-  background: var(--color-orange);
-  color: #0a0a0a;
+  background: var(--color-olive-100);
+  color: #232222;
   padding: clamp(12px, 2vw, 14px) clamp(20px, 4vw, 28px);
   border-radius: 999px;
   border: solid 2px #000;
@@ -892,7 +958,7 @@ header h1 a.active {
   transition: transform 0.15s ease, box-shadow 0.15s ease;
   white-space: normal;
   word-break: break-word;
-  max-width: 80%;
+  max-width: 70%;
   box-sizing: border-box;
   text-align: center;
 }
@@ -1109,7 +1175,7 @@ header h1 a.active {
 
 .section {
   padding: 2em;
-  padding-top: 100px;
+  /* padding-top: 100px; */
   margin-bottom: 120px;
 
 }
@@ -1162,6 +1228,12 @@ header h1 a.active {
 .about-resume p {
   max-width: 400px;
   width: 100%;
+}
+
+.responsive-img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 .hero-typewriter {
@@ -1373,6 +1445,18 @@ header h1 a.active {
   align-items: center;
 }
 
+@media (max-width: 768px) {
+  .footer-p {
+    font-size: clamp(0.6em, 3vw, 0.1em);
+    text-align: center;
+  }
+
+  .footer-info {
+    font-size: clamp(0.8em, 3vw, 0.1em);
+    text-align: center;
+  }
+}
+
 .footer-nav ul {
   display: flex;
   padding: 0;
@@ -1454,6 +1538,24 @@ header h1 a.active {
 
   100% {
     transform: translateY(0px);
+  }
+}
+
+@media (max-width: 1000px) {
+  .footer-head {
+    font-size: clamp(2.5em, 5vw, 3em);
+    text-align: center;
+    margin-right: 1em;
+    margin-left: 1em;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-head {
+    font-size: clamp(2.2em, 5vw, 3em);
+    text-align: center;
+    margin-right: 1em;
+    margin-left: 1em;
   }
 }
 
