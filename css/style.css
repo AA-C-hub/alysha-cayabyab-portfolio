@@ -2749,3 +2749,7 @@ main ul {
 .delay-3 {
   transition-delay: 0.6s;
 }
+
+.delay-4 {
+  transition-delay: 0.8s;
+}
