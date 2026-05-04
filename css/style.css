@@ -2753,3 +2753,7 @@ main ul {
 .delay-4 {
   transition-delay: 0.8s;
 }
+
+.delay-5 {
+  transition-delay: 1s;
+}
