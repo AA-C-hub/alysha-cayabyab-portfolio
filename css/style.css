@@ -2374,6 +2374,11 @@ main ul {
   animation-duration: 1s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
+  opacity: 0;
+  /* start hidden */
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  /* keep final state */
 }
 
 /* DELAYS */
@@ -2456,6 +2461,33 @@ main ul {
 
 .fadeInUp {
   -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}
+
+/* NEW FADEINUP */
+.animate {
+  opacity: 0;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.one {
+  animation-delay: 0.5s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fadeInUp {
   animation-name: fadeInUp;
 }
 
